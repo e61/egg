@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: extension/dom.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: extension/dom.js</h1>
+
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @fileoverview The Document Object Model (DOM) is a programming interface for 
+ * HTML, XML and SVG documents. It provides a structured representation of the 
+ * document (a tree) and it defines a way that the structure can be accessed 
+ * from programs so that they can change the document structure, style and content. 
+ * 
+ * @author Ciro Cesar Maciel &lt;ciro.maciel@c37.co>
+ * 
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model|Document Object Model (DOM)}
+ * 
+ */
+
+/**
+ * A Web page is a document. This document can be either displayed in the browser 
+ * window, or as the HTML source. But it is the same document in both cases. The 
+ * Document Object Model (DOM) provides another way to represent, store and 
+ * manipulate that same document.
+ * 
+ * @namespace egg.extension.dom
+ */
+egg.extension.dom = (function () {
+    'use strict';
+
+    return {
+        /**
+         * Returns the first element that is a descendant of the element
+         * on which it is invoked that matches the specified group of selectors.
+         * 
+         * @memberOf egg.extension.dom
+         * 
+         * @param {HTMLElement} root parent element to query
+         * @param {String} selectors is a string containing one or more CSS selectors separated by commas
+         *
+         * @returns {HTMLElement} Returns null if no matches are found; otherwise, it returns the first matching element.
+         * 
+         * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector|Document.querySelector()}
+         * @see {@link https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Selectors|CSS Selectors}
+         * @see {@link http://www.w3.org/TR/CSS21/selector.html%23id-selectors|CSS Selectors}
+         * 
+         */
+        query: function (root, selectors) {
+            return root.querySelector(selectors);
+        },
+        /**
+         * Returns a list of the elements within the document (using depth-first 
+         * pre-order traversal of the document's nodes) that match the specified 
+         * group of selectors. The object returned is a NodeList.
+         * 
+         * @memberOf egg.extension.dom
+         * 
+         * @param {HTMLElement} root parent element to query
+         * @param {string} selectors is a string containing one or more CSS selectors separated by commas.
+         *
+         * @returns {NodeList} The returned NodeList will contain all the elements 
+         * in the document that are matched by any of the specified selectors. 
+         * If the selectors string contains a CSS pseudo-element, the returned 
+         * elementList will be empty
+         * 
+         * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll|Document.querySelectorAll()}
+         * @see {@link https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Selectors|CSS Selectors}
+         * @see {@link http://www.w3.org/TR/CSS21/selector.html%23id-selectors|CSS Selectors}
+         * @see {@link https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements|CSS Pseudo-elements}
+         * @see {@link https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Selectors|NodeList}
+         * 
+         */
+        queryAll: function (root, selectors) {
+            return root.querySelectorAll(selectors);
+        },
+        /**
+         * Method registers the specified listener on the EventTarget it's 
+         * called on. The event target may be an Element in a document, the 
+         * Document itself, a Window, or any other object that supports events.
+         * 
+         * @memberOf egg.extension.dom
+         * 
+         * @param {HTMLElement} element Target to attach listener to
+         * @param {string} type representing the event type to listen or
+         * @param {function} listener The object that receives a notification 
+         * when an event of the specified type occurs. This must be an object 
+         * implementing the EventListener interface, or simply a JavaScript function
+         *
+         * @returns {void}
+         * 
+         * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener|EventTarget.addEventListener()}
+         * 
+         */
+        listen: function (element, type, listener) {
+            element.addEventListener(type, listener, false);
+        },
+        /**
+         * Removes the event listener previously registered with {@link egg.extension.dom.listen}.
+         * 
+         * @memberOf egg.extension.dom
+         * 
+         * @param {HTMLElement} element Target to remove listener from
+         * @param {String} type representing the event type to remove
+         * @param {Function} listener The EventListener function to remove from 
+         * the event target
+         *
+         * @returns {void}
+         * 
+         * @see {@link https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener|EventTarget.removeEventListener()}
+         * 
+         */
+        unListen: function (element, type, listener) {
+            element.removeEventListener(type, listener, false);
+        }
+    };
+}());
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="egg.extension.context.html">context</a></li><li><a href="egg.extension.data.dictionary.html">dictionary</a></li><li><a href="egg.extension.delegate.html">delegate</a></li><li><a href="egg.extension.global.html">global</a></li><li><a href="egg.extension.pubsub.html">pubsub</a></li></ul><h3>Namespaces</h3><ul><li><a href="egg.html">egg</a></li><li><a href="egg.extension.data.html">data</a></li><li><a href="egg.extension.dom.html">dom</a></li><li><a href="egg.extension.object.html">object</a></li><li><a href="egg.extension.utility.html">utility</a></li><li><a href="egg.extension.utility.color.html">color</a></li><li><a href="egg.extension.utility.math.html">math</a></li><li><a href="egg.extension.utility.string.html">string</a></li><li><a href="egg.module.html">module</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha5</a> on Sat Aug 22 2015 18:01:11 GMT-0300 (Hora oficial do Brasil)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+    "name": "egg",
+    "version": "0.0.0",
+    "description": "A scalable, event-driven JavaScript framework for building you library",
+    "keywords": [
+        "util",
+        "functional",
+        "server",
+        "client",
+        "browser"
+    ],
+    "homepage": "http://v09.co/",
+    "license": "CC-BY-SA-3.0",
+    "author": {
+        "name": "Ciro Cesar Maciel",
+        "email": "ciro.maciel@c37.co"
+    },
+    "contributors": [],
+    "dependencies": {},
+    "devDependencies": {
+        "gulp": "latest",
+        "del": "latest",
+        "gulp-jsdoc": "latest",
+        "gulp-watch": "latest",
+        "gulp-batch": "latest",
+        "gulp-header": "latest",
+        "gulp-concat": "latest",
+        "gulp-wrapper": "latest"
+    }
+}

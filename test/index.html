@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>egg</title>
+        <style>
+            html,
+            body {
+                height: 100%;
+                width: 100%;
+                margin: 0px;
+                padding: 0px;
+            }
+            main {
+                position: absolute;
+                top: 00px;
+                left: 0px;
+                right: 0px;
+                bottom: 0px;
+                background-color: rgb(255, 255, 255);
+                overflow-x: hidden;
+                overflow-y: hidden;
+            }
+            main:focus{
+                outline: none;
+            }
+        </style>
+        <script src="../dist/egg.js"></script>
+        <script>
+            window.onload = function () {
+                
+//                debugger;
+                
+                var plane = egg.create({name: 'plane'});
+
+                plane.module.add('tool', false, function (context) {
+
+                    context.listen('click', function (event) {
+                        console.log(event);
+                    })
+                    context.listen('keypress', function (event) {
+                        console.log(event);
+                    })
+
+                    return {
+                        init: function (params) {
+
+                            console.log(params);
+
+                            context.element.innerHTML = params;
+
+                        },
+                        event: context.pubsub.create()
+                    };
+
+                });
+
+                egg('plane').module.add('view', false, function (context) {
+
+                    var _zoom = 1;
+                    
+                    context.listen('keypress', function (event) {
+                        console.log(event);
+                    })
+                    
+                    console.log(context);
+                    
+                    context.error(new  EvalError('mostroGard!!! ;-)'))
+
+                    return {
+                        init: function (params) {
+
+                        },
+                        update: function () {},
+                        reset: function () {},
+                        get zoom() {
+                            return _zoom;
+                        },
+                        set zoom(value) {
+                            return _zoom = value;
+                        },
+                        destroy: function () {
+
+                        }
+                    }
+
+
+                });
+
+                egg('plane').module.add('plane', true, function (context) {
+
+                    var view = context.module('view'),
+                        tool = context.module('tool');
+
+
+                    var formatedNumber = context.utility.math.toFloat('938.56536157', 3);
+                    console.log(formatedNumber);
+
+                    return {
+                        init: function (params) {
+
+                            view.init();
+                            tool.init('mostroGard');
+
+                        },
+                        reset: function () {},
+                        view: view,
+                        tool: tool,
+                        point: {},
+                        object: {},
+                        importer: {},
+                        exporter: {},
+                        destroy: function () {
+
+                        }
+                    };
+
+                });
+
+                egg('plane').event.listen('error', function (event) {
+                    console.log(event.exception);
+                });
+
+                egg('plane').init();
+
+                console.log(egg('plane').main);
+                console.log(egg);
+
+                var plane = egg('plane').main;
+
+                plane.init();
+
+            };
+        </script>
+    </head>
+
+    <body>
+
+        <main data-module="tool view" tabindex="0">
+
+        </main>
+
+    </body>
+
+</html>
