@@ -1,7 +1,7 @@
 {
     "name": "egg",
     "version": "0.0.0",
-    "description": "A scalable, event-driven JavaScript framework for building you library",
+    "description": "Egg is a JavaScript framework for building large-scale web libraries",
     "keywords": [
         "util",
         "functional",
