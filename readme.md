@@ -72,11 +72,25 @@ Egg is a JavaScript framework for building large-scale web libraries. Its design
 
 
 ```
-Fix in JSDoc</b> - jsdoc-default.css - line 199
-.details { margin-top: 14px; }
-.details dt { width:100px; float:left; padding-left: 10px;  padding-top: 1px; border-left: 2px solid #DDD; margin-top: 1px; }
-.details dd { margin-left: 50px; padding-top: 2px;}
-.details li { margin-left: 30px; }
+Fix in JSDoc - jsdoc-default.css - line 199
+.details { 
+    margin-top: 14px; 
+}
+.details dt { 
+    width:100px; 
+    float:left; 
+    padding-left: 10px;
+    padding-top: 1px;
+    border-left: 2px solid #DDD;
+    margin-top: 1px;
+}
+.details dd { 
+    margin-left: 50px; 
+    padding-top: 2px;
+}
+.details li { 
+    margin-left: 30px; 
+}
 ```
 
 https://help.github.com/articles/markdown-basics/
