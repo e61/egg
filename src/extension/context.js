@@ -76,8 +76,16 @@ egg.extension.context = (function () {
              * @returns {void}
              * 
              */
-            get error() {
-                return this._library._error;
+            // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
+            error: function (exception) {
+                if (this._library.global.get('debug')) {
+                    throw exception;
+                } else {
+                    this._library.event.notify('error', {
+                        exception: exception
+                    });
+
+                }
             }
         });
 

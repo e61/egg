@@ -45,7 +45,7 @@
                     return {
                         init: function (params) {
 
-                            console.log(params);
+                            console.log('tool - init - ' + arams);
 
                             context.element.innerHTML = params;
 
@@ -124,7 +124,7 @@
                 egg('plane').init();
 
                 console.log(egg('plane').main);
-                console.log(egg);
+                console.log(egg('plane'));
 
                 var plane = egg('plane').main;
 

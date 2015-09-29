@@ -23,7 +23,7 @@
  * @namespace egg.module
  */
 egg.extension.module = (function () {
-
+ 
     'use strict';
 
     //--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ egg.extension.module = (function () {
      * @returns {void}
      * @private
      */
-    function captureErrors(library, data) {
+    function captureErrors(context, data) {
 
         var object = data.instance,
             objectName = data.name;
@@ -72,7 +72,7 @@ egg.extension.module = (function () {
                             ex.objectName = objectName;
                             ex.name = errorPrefix + ex.name;
                             ex.message = errorPrefix + ex.message;
-                            library._error(ex);
+                            context.error(ex);
                         }
                     };
 
@@ -231,7 +231,7 @@ egg.extension.module = (function () {
                     };
 
                 if (!this._library.global.get('debug')) {
-                    captureErrors(this._library, data);
+                    captureErrors(context, data);
                 }
 
                 if (element) {

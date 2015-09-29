@@ -55,17 +55,6 @@ egg = (function () {
                 },
                 global: new egg.extension.data.dictionary(),
                 event: new egg.extension.pubsub(),
-                // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
-                _error: function (exception) {
-                    if (library.global.get('debug')) {
-                        throw exception;
-                    } else {
-                        library.event.notify('error', {
-                            exception: exception
-                        });
-
-                    }
-                },
                 module: new egg.extension.module(library),
                 get main() {
                     return library.module.main;
