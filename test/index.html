@@ -45,7 +45,7 @@
                     return {
                         init: function (params) {
 
-                            console.log('tool - init - ' + arams);
+                            console.log('tool - init - ' + params);
 
                             context.element.innerHTML = params;
 
@@ -55,7 +55,7 @@
 
                 });
 
-                egg('plane').module.add('view', false, function (context) {
+                egg.get('plane').module.add('view', false, function (context) {
 
                     var _zoom = 1;
                     
@@ -87,7 +87,7 @@
 
                 });
 
-                egg('plane').module.add('plane', true, function (context) {
+                egg.get('plane').module.add('plane', true, function (context) {
 
                     var view = context.module('view'),
                         tool = context.module('tool');
@@ -117,16 +117,16 @@
 
                 });
 
-                egg('plane').event.listen('error', function (event) {
+                egg.get('plane').event.listen('error', function (event) {
                     console.log(event.exception);
                 });
 
-                egg('plane').init();
+                egg.get('plane').init();
 
-                console.log(egg('plane').main);
-                console.log(egg('plane'));
+                console.log(egg.get('plane').main);
+                console.log(egg.get('plane'));
 
-                var plane = egg('plane').main;
+                var plane = egg.get('plane').main;
 
                 plane.init();
 

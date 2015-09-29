@@ -20,7 +20,7 @@
  * our function names conflicting with other functions defined in additional 
  * scripts on the page.
  * 
- * @namespace egg.module
+ * @namespace egg.extension.module
  */
 egg.extension.module = (function () {
  
@@ -157,7 +157,7 @@ egg.extension.module = (function () {
         /**
          * Adds a new event handler for a particular type of event.
          * 
-         * @memberOf egg.module
+         * @memberOf egg.extension.module
          * 
          * @function add
          * @param {String} event The name of the event to listen for
@@ -184,7 +184,7 @@ egg.extension.module = (function () {
         /**
          * Adds a new event handler for a particular type of event.
          * 
-         * @memberOf egg.module
+         * @memberOf egg.extension.module
          * 
          * @function get
          * @param {String} name The name of the event to listen for
@@ -208,7 +208,7 @@ egg.extension.module = (function () {
         /**
          * Adds a new event handler for a particular type of event.
          * 
-         * @memberOf egg.module
+         * @memberOf egg.extension.module
          * 
          * @function start
          * @param {String} name The name of the event to listen for
@@ -252,7 +252,7 @@ egg.extension.module = (function () {
         /**
          * Adds a new event handler for a particular type of event.
          * 
-         * @memberOf egg.module
+         * @memberOf egg.extension.module
          * 
          * @function startAll
          * @returns {egg.module}
@@ -270,7 +270,7 @@ egg.extension.module = (function () {
         /**
          * Adds a new event handler for a particular type of event.
          * 
-         * @memberOf egg.module
+         * @memberOf egg.extension.module
          * 
          * @function stop
          * @param {String} name The name of the event to listen for
@@ -286,7 +286,7 @@ egg.extension.module = (function () {
         /**
          * Adds a new event handler for a particular type of event.
          * 
-         * @memberOf egg.module
+         * @memberOf egg.extension.module
          * 
          * @function stopAll
          * @returns {egg.module}
@@ -302,7 +302,7 @@ egg.extension.module = (function () {
          * Signals that an error has occurred. If in development mode, an error
          * is thrown. If in production mode, an event is fired.
          * 
-         * @memberOf egg.module
+         * @memberOf egg.extension.module
          * 
          * @function error
          * @param {Error} [exception] The exception object to use.

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Namespace: object</title>
+    <title>JSDoc: Namespace: library</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Namespace: object</h1>
+    <h1 class="page-title">Namespace: library</h1>
 
     
 
@@ -27,9 +27,7 @@
 
 <header>
     <h2>
-        <span class="ancestors"><a href="egg.html">egg</a><a href="egg.extension.html">.extension</a>.</span>
-    
-    object
+    library
     </h2>
     
 </header>
@@ -40,9 +38,7 @@
 
     
         
-            <div class="description">Objects in JavaScript, just as in many other programming languages, can be 
-compared to objects in real life. The concept of objects in JavaScript can be 
-understood with real life, tangible objects.</div>
+            <div class="description">O objeto Biblioteca</div>
         
 
         
@@ -68,7 +64,7 @@ understood with real life, tangible objects.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="object.js.html">extension/object.js</a>, <a href="object.js.html#line16">line 16</a>
+        <a href="library.js.html">library.js</a>, <a href="library.js.html#line41">line 41</a>
     </li></ul></dd>
     
 
@@ -102,7 +98,7 @@ understood with real life, tangible objects.</div>
         <dl>
             
 <dt>
-    <h4 class="name" id="assign"><span class="type-signature">&lt;static> </span>assign<span class="signature">(target, source)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id="init"><span class="type-signature"></span>init<span class="signature">(event, handler)</span><span class="type-signature"> &rarr; {<a href="library.html">library</a>}</span></h4>
 
     
 </dt>
@@ -110,9 +106,7 @@ understood with real life, tangible objects.</div>
 
     
     <div class="description">
-        The Object.assign() method is used to copy the values of all enumerable 
-own properties from one or more source objects to a target object. It 
-will return the target object.
+        Adds a new event handler for a particular type of event.
     </div>
     
 
@@ -146,13 +140,13 @@ will return the target object.
 
         <tr>
             
-                <td class="name"><code>target</code></td>
+                <td class="name"><code>event</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Object</span>
+<span class="param-type">String</span>
 
 
             
@@ -162,20 +156,20 @@ will return the target object.
 
             
 
-            <td class="description last">The object to receive properties</td>
+            <td class="description last">The name of the event to listen for</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>source</code></td>
+                <td class="name"><code>handler</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Object</span>
+<span class="param-type">function</span>
 
 
             
@@ -185,7 +179,7 @@ will return the target object.
 
             
 
-            <td class="description last">The object whose properties should be copied.</td>
+            <td class="description last">The function to call when the event occurs</td>
         </tr>
 
     
@@ -216,19 +210,12 @@ will return the target object.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="object.js.html">extension/object.js</a>, <a href="object.js.html#line38">line 38</a>
+        <a href="library.js.html">library.js</a>, <a href="library.js.html#line50">line 50</a>
     </li></ul></dd>
     
 
     
 
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign">Object.assign()</a></li>
-        </ul>
-    </dd>
     
 
     
@@ -249,10 +236,6 @@ will return the target object.
     <h5>Returns:</h5>
     
             
-<div class="param-desc">
-    The target object gets returned.
-</div>
-
 
 
 <dl>
@@ -261,7 +244,7 @@ will return the target object.
     </dt>
     <dd>
         
-<span class="param-type">Object</span>
+<span class="param-type"><a href="library.html">library</a></span>
 
 
     </dd>
