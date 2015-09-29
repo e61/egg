@@ -53,6 +53,7 @@ egg.extension.context = (function () {
                  * });
                  * 
                  */
+                // nivel de acesso - um código NÃO pode gerenciar uma biblioteca
                 listen: function (event, handler) {
 
                     self._library.event.listen(self._name + '-' + event, handler);
@@ -60,6 +61,7 @@ egg.extension.context = (function () {
                     return this;
 
                 },
+                // nivel de acesso - um código NÃO pode gerenciar uma biblioteca
                 notify: function (event, data) {
 
                     self._library.event.notify(self._name + '-' + event, data);
@@ -84,6 +86,7 @@ egg.extension.context = (function () {
                  * console.log(tool); // Tool{}
                  * 
                  */
+                // nivel de acesso - um código NÃO pode gerenciar uma biblioteca
                 get: function (name) {
                     return self._library.module.get(name);
                 }
