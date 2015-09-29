@@ -72,7 +72,7 @@ Egg is a JavaScript framework for building large-scale web libraries. Its design
 
 
 ```
-Fix in JSDoc - jsdoc-default.css - line 199
+Fix in JSDoc - .\node_modules\jsdoc\templates\default\static\styles - jsdoc-default.css - line 199
 
 .details { 
     margin-top: 14px; 
