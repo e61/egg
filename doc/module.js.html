@@ -50,7 +50,7 @@
  * @namespace egg.extension.module
  */
 egg.extension.module = (function () {
- 
+
     'use strict';
 
     //--------------------------------------------------------------------------
@@ -245,7 +245,7 @@ egg.extension.module = (function () {
         start: function (name) {
 
             if ((this._registries[name]) &amp;&amp; (!this._instances[name])) {
-                
+
                 var element = egg.extension.dom.query(document.documentElement, '[data-module~=' + name + ']'),
                     context = new egg.extension.context(this._library, element, name);
 
@@ -324,201 +324,10 @@ egg.extension.module = (function () {
 
 
             return this;
-        },
-        /**
-         * Signals that an error has occurred. If in development mode, an error
-         * is thrown. If in production mode, an event is fired.
-         * 
-         * @memberOf egg.extension.module
-         * 
-         * @function error
-         * @param {Error} [exception] The exception object to use.
-         * @returns {void}
-         * @private
-         */
-        error: function (exception) {
-
-            if (this._library.global.get('debug')) {
-                throw exception;
-            } else {
-                this._library.event.notify('error', {
-                    exception: exception
-                });
-
-            }
-
         }
     }
 
     return Module;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    var _module = {
-//        registry: {},
-//        instance: {}
-//    };    
-
-//    return {
-//        main: undefined,
-//        /**
-//         * Adds a new event handler for a particular type of event.
-//         * 
-//         * @memberOf egg.module
-//         * 
-//         * @function add
-//         * @param {String} event The name of the event to listen for
-//         * @param {Boolean} main The function to call when the event occurs
-//         * @param {Function} creator The function to call when the event occurs
-//         * @returns {egg.module}
-//         * 
-//         */
-//        add: function (name, main, creator) {
-//
-//            if (typeof _module.registry[name] !== 'undefined') {
-//                error(new Error('Module ' + name + ' has already been added.'));
-//                return this;
-//            }
-//
-//            _module.registry[name] = {
-//                creator: creator,
-//                main: main,
-//                counter: 0 // increments for each new instance,
-//            };
-//
-//            return this;
-//
-//        },
-//        /**
-//         * Adds a new event handler for a particular type of event.
-//         * 
-//         * @memberOf egg.module
-//         * 
-//         * @function get
-//         * @param {String} name The name of the event to listen for
-//         * @returns {egg.module}
-//         * 
-//         */
-//        get: function (name) {
-//
-//            if (typeof _module.registry[name] === 'undefined') {
-//                error(new Error('Module ' + name + ' not been added.'));
-//                return this;
-//            }
-//
-//            if (!_module.instance[name]) {
-//                this.start(name);
-//            }
-//
-//            return _module.instance[name].instance;
-//
-//        },
-//        /**
-//         * Adds a new event handler for a particular type of event.
-//         * 
-//         * @memberOf egg.module
-//         * 
-//         * @function start
-//         * @param {String} name The name of the event to listen for
-//         * @returns {egg.module}
-//         * 
-//         */
-//        start: function (name) {
-//
-//            if ((_module.registry[name]) &amp;&amp; (!_module.instance[name])) {
-//
-//                var element = egg.extension.dom.query(document.documentElement, '[data-module=' + name + ']'),
-//                    context = new egg.extension.context(element, name, error);
-//
-//                var module = _module.registry[name],
-//                    data = {
-//                        instance: module.creator(context),
-//                        element: element,
-//                        name: name,
-//                        delegates: []
-//                    };
-//
-//                if (!egg.extension.global.get('debug')) {
-//                    captureErrors(data);
-//                }
-//
-//                if (element) {
-//                    bindEventListeners(data);
-//                }
-//
-//                _module.instance[name] = data;
-//
-//                if (module.main) {
-//                    this.main = data.instance;
-//                }
-//
-//            }
-//
-//            return this;
-//
-//        },
-//        /**
-//         * Adds a new event handler for a particular type of event.
-//         * 
-//         * @memberOf egg.module
-//         * 
-//         * @function startAll
-//         * @returns {egg.module}
-//         * 
-//         */
-//        startAll: function () {
-//
-//            for (name in _module.registry) {
-//                this.start(name);
-//            }
-//
-//            return this;
-//
-//        },
-//        /**
-//         * Adds a new event handler for a particular type of event.
-//         * 
-//         * @memberOf egg.module
-//         * 
-//         * @function stop
-//         * @param {String} name The name of the event to listen for
-//         * @returns {egg.module}
-//         * 
-//         */
-//        stop: function (name) {
-//
-//
-//
-//            return this;
-//        },
-//        /**
-//         * Adds a new event handler for a particular type of event.
-//         * 
-//         * @memberOf egg.module
-//         * 
-//         * @function stopAll
-//         * @returns {egg.module}
-//         * 
-//         */
-//        stopAll: function () {
-//
-//
-//
-//            return this;
-//        }
-//    };
 
 }());</code></pre>
         </article>
@@ -536,7 +345,7 @@ egg.extension.module = (function () {
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha5</a> on Tue Sep 29 2015 13:40:18 GMT-0300 (Hora oficial do Brasil)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha5</a> on Tue Sep 29 2015 18:43:33 GMT-0300 (Hora oficial do Brasil)
 </footer>
 
 <script> prettyPrint(); </script>

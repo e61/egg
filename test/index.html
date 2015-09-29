@@ -35,13 +35,13 @@
 
                 plane.module.add('tool', false, function (context) {
 
-                    context.listen('click', function (event) {
+                    context.event.listen('click', function (event) {
                         console.log(event);
                     })
-                    context.listen('keypress', function (event) {
+                    context.event.listen('keypress', function (event) {
                         console.log(event);
                     })
-
+                    
                     return {
                         init: function (params) {
 
@@ -59,7 +59,7 @@
 
                     var _zoom = 1;
                     
-                    context.listen('keypress', function (event) {
+                    context.event.listen('keypress', function (event) {
                         console.log(event);
                     })
                     
@@ -89,10 +89,9 @@
 
                 egg.get('plane').module.add('plane', true, function (context) {
 
-                    var view = context.module('view'),
-                        tool = context.module('tool');
-
-
+                    var view = context.module.get('view'),
+                        tool = context.module.get('tool');
+                        
                     var formatedNumber = context.utility.math.toFloat('938.56536157', 3);
                     console.log(formatedNumber);
 
@@ -123,10 +122,11 @@
 
                 egg.get('plane').init();
 
-                console.log(egg.get('plane').main);
+                console.log(egg);
                 console.log(egg.get('plane'));
+                console.log(egg.get('plane').module.main);
 
-                var plane = egg.get('plane').main;
+                var plane = egg.get('plane').module.main;
 
                 plane.init();
 

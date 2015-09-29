@@ -10,6 +10,15 @@
  * @author Ciro Cesar Maciel <ciro.maciel@c37.co>
  */
 
-var egg = {
-    extension: {}
-}
+/**
+ * 
+ * @namespace egg
+ * 
+ */
+var egg = {};
+
+/**
+ * The one global object for Egg structure.
+ * @namespace egg.extension
+ */
+egg.extension = {};

@@ -45,13 +45,14 @@ gulp.task('concat', function () {
         .pipe(wrapper({
             header: '(function (window) { \n',
             footer: [
-                '',
+                '\n',
                 'if (typeof module === \'object\' && typeof module.exports === \'object\') {',
                 '   module.exports = ' + pkg.name + '; //npm, we want to export egg instead of assigning to global Window',
                 '} else {',
                 '   window.' + pkg.name + ' = ' + pkg.name + ';',
                 '}',
-                '}(typeof window !== \'undefined\' ? window : this));'
+                ' ',
+                '}(typeof window !== \'undefined\' ? window : this));',
             ].join('\n')
         }))
         .pipe(header(banner, {pkg: pkg}))
