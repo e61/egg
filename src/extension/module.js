@@ -301,5 +301,12 @@ egg.extension.module = (function () {
     }
 
     return Module;
+    
+    
+    return {
+        
+        
+    }
+    
 
 }());
