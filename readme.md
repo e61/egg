@@ -30,6 +30,8 @@ Egg is a JavaScript framework for building large-scale web libraries. Its design
     * [Hypertext Transfer Protocol (HTTP)](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
     * [WebSocket](https://en.wikipedia.org/wiki/WebSocket)
 
+* [Algorithm](https://en.wikipedia.org/wiki/Algorithm)
+
 * [Software](https://en.wikipedia.org/wiki/Software)
     * [Best Practices](http://www.w3.org/wiki/JavaScript_best_practices)
     * [SOLID (Single responsibility, Open-closed, Liskov substitution, Interface segregation and Dependency inversion)](https://en.wikipedia.org/wiki/SOLID_\(object-oriented_design\))
