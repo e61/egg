@@ -30,9 +30,8 @@ Egg is a JavaScript framework for building large-scale web libraries. Its design
     * [Hypertext Transfer Protocol (HTTP)](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
     * [WebSocket](https://en.wikipedia.org/wiki/WebSocket)
 
-* [Algorithm](https://en.wikipedia.org/wiki/Algorithm)
-
 * [Software](https://en.wikipedia.org/wiki/Software)
+    * [Algorithm](https://en.wikipedia.org/wiki/Algorithm)
     * [Best Practices](http://www.w3.org/wiki/JavaScript_best_practices)
     * [SOLID (Single responsibility, Open-closed, Liskov substitution, Interface segregation and Dependency inversion)](https://en.wikipedia.org/wiki/SOLID_\(object-oriented_design\))
     * [Design Pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
@@ -42,7 +41,12 @@ Egg is a JavaScript framework for building large-scale web libraries. Its design
         * [Mediator](http://addyosmani.com/resources/essentialjsdesignpatterns/book/#mediatorpatternjavascript)
         * [Module](http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript)
     * [Data Structure](https://en.wikipedia.org/wiki/Data_structure)
+        * [Array](https://en.wikipedia.org/wiki/Array_data_structure)
+        * [Database Index](https://en.wikipedia.org/wiki/Database_index)
         * [Dictionary](https://en.wikipedia.org/wiki/Associative_array)
+        * [Graph](https://en.wikipedia.org/wiki/Graph_%28abstract_data_type%29)
+        * [Set](https://en.wikipedia.org/wiki/Set_%28abstract_data_type%29)
+        * [Hash Table](https://en.wikipedia.org/wiki/Hash_table)
     * [Documentation](https://en.wikipedia.org/wiki/Software_documentation)
         * [JSDoc](http://usejsdoc.org/)
             * [An introduction to JSDoc](http://www.2ality.com/2011/08/jsdoc-intro.html)
