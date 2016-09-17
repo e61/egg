@@ -28,10 +28,12 @@
         <script src="../dist/egg.js"></script>
         <script>
             window.onload = function () {
-                
+
 //                debugger;
-                
-                var plane = egg.create({name: 'plane'});
+
+                var plane = egg.create({
+                    name: 'plane'
+                });
 
                 plane.module.add('tool', false, function (context) {
 
@@ -41,7 +43,7 @@
                     context.event.listen('keypress', function (event) {
                         console.log(event);
                     })
-                    
+
                     return {
                         init: function (params) {
 
@@ -58,14 +60,14 @@
                 egg.get('plane').module.add('view', false, function (context) {
 
                     var _zoom = 1;
-                    
+
                     context.event.listen('keypress', function (event) {
                         console.log(event);
                     })
-                    
+
                     console.log(context);
-                    
-                    context.error(new  EvalError('mostroGard!!! ;-)'))
+
+                    context.error(new EvalError('mostroGard!!! ;-)'))
 
                     return {
                         init: function (params) {
@@ -91,7 +93,7 @@
 
                     var view = context.module.get('view'),
                         tool = context.module.get('tool');
-                        
+
                     var formatedNumber = context.utility.math.toFloat('938.56536157', 3);
                     console.log(formatedNumber);
 
