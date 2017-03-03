@@ -1,31 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>JSDoc: Source: extension/pubsub.js</title>
-
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
-</head>
-
-<body>
-
-<div id="main">
-
-    <h1 class="page-title">Source: extension/pubsub.js</h1>
-
-    
-
-
-    
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>/**
+/**
  * @fileoverview In software architecture, publish–subscribe is a messaging 
  * pattern where senders of messages, called publishers, do not program the 
  * messages to be sent directly to specific receivers, called subscribers. 
@@ -34,12 +7,12 @@
  * interest in one or more classes, and only receive messages that are of 
  * interest, without knowledge of what, if any, publishers there are.
  * 
- * @author Ciro Cesar Maciel &lt;ciro.maciel@c37.co>
+ * @author Ciro Cesar Maciel <ciro.maciel@c37.co>
  * 
  * @see {@link https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern|Publish–Subscribe Pattern}
  * 
  */
-egg.extension.pubsub = (function () {
+egg.core.dispatcher = (function () {
     'use strict';
 
     /**
@@ -50,20 +23,20 @@ egg.extension.pubsub = (function () {
      * everything from basic user interactions to automated notifications of 
      * things happening in the rendering model
      * 
-     * @memberOf egg.extension
+     * @memberOf egg.core
      * 
-     * @class pubsub
+     * @class dispatcher
      */
-    function PubSub() {
+    function Dispatcher() {
         this._listeners = {};
     }
 
-    PubSub.prototype = {
-        constructor: PubSub,
+    Dispatcher.prototype = {
+        constructor: Dispatcher,
         /**
          * Register an event handler of a specific notification type.
          * 
-         * @memberOf egg.extension.pubsub
+         * @memberOf egg.core.dispatcher
          * 
          * @function listen
          * @instance
@@ -71,7 +44,7 @@ egg.extension.pubsub = (function () {
          * @param {Function} handler The function to call when the event occurs
          * @returns {void}
          * 
-         * @see {@link egg.extension.context#listen|egg.extension.context.listen}
+         * @see {@link egg.core.context#listen|egg.core.context.listen}
          * 
          */
         listen: function (event, handler) {
@@ -80,7 +53,7 @@ egg.extension.pubsub = (function () {
         /**
          * Adds a new event handler for a particular type of event.
          * @function notify
-         * @memberOf egg.extension.pubsub
+         * @memberOf egg.core.dispatcher
          * @instance
          * @param {String} event The name of the event to listen for
          * @param {Function} data The function to call when the event occurs
@@ -96,7 +69,7 @@ egg.extension.pubsub = (function () {
         /**
          * Adds a new event handler for a particular type of event.
          * @function unListen
-         * @memberOf egg.extension.pubsub
+         * @memberOf egg.core.dispatcher
          * @instance
          * @param {String} event The name of the event to listen for
          * @param {Function} handler The function to call when the event occurs
@@ -114,43 +87,21 @@ egg.extension.pubsub = (function () {
 
     /**
      * Adds a new event handler for a particular type of event.
-     * @memberOf egg.extension.pubsub
+     * @memberOf egg.core.dispatcher
      * 
      * @function create
      * @returns {void}
      * 
-     * @see egg.extension.context
+     * @see egg.core.context
      * 
      * @example
      * var event = context.observer.create();
-     * console.log(event); // PubSub{}
+     * console.log(event); // Dispatcher{}
      */
-    PubSub.create = function () {
-        return new PubSub();
+    Dispatcher.create = function () {
+        return new Dispatcher();
     };
 
-    return PubSub;
+    return Dispatcher;
 
-})();</code></pre>
-        </article>
-    </section>
-
-
-
-
-</div>
-
-<nav>
-    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="egg.extension.context.html">context</a></li><li><a href="egg.extension.data.dictionary.html">dictionary</a></li><li><a href="egg.extension.delegate.html">delegate</a></li><li><a href="egg.extension.global.html">global</a></li><li><a href="egg.extension.pubsub.html">pubsub</a></li></ul><h3>Namespaces</h3><ul><li><a href="egg.html">egg</a></li><li><a href="egg.extension.html">extension</a></li><li><a href="egg.extension.data.html">data</a></li><li><a href="egg.extension.dom.html">dom</a></li><li><a href="egg.extension.module.html">module</a></li><li><a href="egg.extension.object.html">object</a></li><li><a href="egg.extension.utility.html">utility</a></li><li><a href="egg.extension.utility.color.html">color</a></li><li><a href="egg.extension.utility.math.html">math</a></li><li><a href="egg.extension.utility.string.html">string</a></li><li><a href="library.html">library</a></li></ul>
-</nav>
-
-<br clear="both">
-
-<footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha5</a> on Tue Oct 27 2015 11:43:50 GMT-0200 (Horário brasileiro de verão)
-</footer>
-
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
-</body>
-</html>
+})();

@@ -15,10 +15,10 @@
  * @namespace egg
  * 
  */
-var egg = {};
+var egg = egg || {};
 
 /**
  * The one global object for Egg structure.
- * @namespace egg.extension
+ * @namespace egg.core
  */
-egg.extension = {};
+egg.core = egg.core || {};

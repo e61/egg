@@ -5,16 +5,16 @@
 
 
 /**
- * @memberOf egg.extension
+ * @memberOf egg.core
  * 
  * @class global
  * @static
- * @mixes egg.extension.data.dictionary
+ * @mixes egg.core.data.dictionary
  */
-egg.extension.global = (function () {
+egg.core.global = (function () {
     'use strict';
 
-    var _store = egg.extension.data.dictionary.create();
+    var _store = egg.core.data.dictionary.create();
 
     return _store;
 

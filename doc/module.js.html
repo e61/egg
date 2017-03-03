@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: extension/module.js</title>
+    <title>JSDoc: Source: core/module.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: extension/module.js</h1>
+    <h1 class="page-title">Source: core/module.js</h1>
 
     
 
@@ -47,9 +47,9 @@
  * our function names conflicting with other functions defined in additional 
  * scripts on the page.
  * 
- * @namespace egg.extension.module
+ * @namespace egg.core.module
  */
-egg.extension.module = (function () {
+egg.core.module = (function () {
 
     'use strict';
 
@@ -120,7 +120,7 @@ egg.extension.module = (function () {
      */
     function createAndBindEventDelegate(delegates, element, handler, name) {
 
-        var delegate = new egg.extension.delegate(element, handler, name);
+        var delegate = new egg.core.delegate(element, handler, name);
         delegates.push(delegate);
 
 //        debugger;
@@ -180,20 +180,18 @@ egg.extension.module = (function () {
 
     Module.prototype = {
         constructor: Module,
-        main: undefined,
         /**
          * Adds a new event handler for a particular type of event.
          * 
-         * @memberOf egg.extension.module
+         * @memberOf egg.core.module
          * 
          * @function add
          * @param {String} event The name of the event to listen for
-         * @param {Boolean} main The function to call when the event occurs
-         * @param {Function} creator The function to call when the event occurs
+         * @param {Function} callback The function to call when the event occurs
          * @returns {egg.module}
          * 
          */
-        add: function (name, main, creator) {
+        add: function (name, callback) {
 
             if (typeof this._registries[name] !== 'undefined') {
                 error(this._library, new Error('Module ' + name + ' has already been added.'));
@@ -201,8 +199,7 @@ egg.extension.module = (function () {
             }
 
             this._registries[name] = {
-                creator: creator,
-                main: main
+                callback: callback,
             };
 
             return this;
@@ -211,7 +208,7 @@ egg.extension.module = (function () {
         /**
          * Adds a new event handler for a particular type of event.
          * 
-         * @memberOf egg.extension.module
+         * @memberOf egg.core.module
          * 
          * @function get
          * @param {String} name The name of the event to listen for
@@ -232,10 +229,16 @@ egg.extension.module = (function () {
             return this._instances[name].instance;
 
         },
+        list: function () {
+            
+            // ver parse correto
+            return this._registries;
+            
+        },
         /**
          * Adds a new event handler for a particular type of event.
          * 
-         * @memberOf egg.extension.module
+         * @memberOf egg.core.module
          * 
          * @function start
          * @param {String} name The name of the event to listen for
@@ -246,12 +249,12 @@ egg.extension.module = (function () {
 
             if ((this._registries[name]) &amp;&amp; (!this._instances[name])) {
 
-                var element = egg.extension.dom.query(document.documentElement, '[data-module~=' + name + ']'),
-                    context = new egg.extension.context(this._library, element, name);
+                var element = egg.core.dom.query(document.documentElement, '[data-module~=' + name + ']'),
+                    context = new egg.core.context(this._library, element, name);
 
                 var module = this._registries[name],
                     data = {
-                        instance: module.creator(context),
+                        instance: module.callback(context),
                         element: element,
                         name: name,
                         delegates: []
@@ -267,10 +270,6 @@ egg.extension.module = (function () {
 
                 this._instances[name] = data;
 
-                if (module.main) {
-                    this.main = data.instance;
-                }
-
             }
 
             return this;
@@ -279,7 +278,7 @@ egg.extension.module = (function () {
         /**
          * Adds a new event handler for a particular type of event.
          * 
-         * @memberOf egg.extension.module
+         * @memberOf egg.core.module
          * 
          * @function startAll
          * @returns {egg.module}
@@ -297,7 +296,7 @@ egg.extension.module = (function () {
         /**
          * Adds a new event handler for a particular type of event.
          * 
-         * @memberOf egg.extension.module
+         * @memberOf egg.core.module
          * 
          * @function stop
          * @param {String} name The name of the event to listen for
@@ -313,7 +312,7 @@ egg.extension.module = (function () {
         /**
          * Adds a new event handler for a particular type of event.
          * 
-         * @memberOf egg.extension.module
+         * @memberOf egg.core.module
          * 
          * @function stopAll
          * @returns {egg.module}
@@ -328,13 +327,6 @@ egg.extension.module = (function () {
     }
 
     return Module;
-    
-    
-    return {
-        
-        
-    }
-    
 
 }());</code></pre>
         </article>
@@ -346,13 +338,13 @@ egg.extension.module = (function () {
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="egg.extension.context.html">context</a></li><li><a href="egg.extension.data.dictionary.html">dictionary</a></li><li><a href="egg.extension.delegate.html">delegate</a></li><li><a href="egg.extension.global.html">global</a></li><li><a href="egg.extension.pubsub.html">pubsub</a></li></ul><h3>Namespaces</h3><ul><li><a href="egg.html">egg</a></li><li><a href="egg.extension.html">extension</a></li><li><a href="egg.extension.data.html">data</a></li><li><a href="egg.extension.dom.html">dom</a></li><li><a href="egg.extension.module.html">module</a></li><li><a href="egg.extension.object.html">object</a></li><li><a href="egg.extension.utility.html">utility</a></li><li><a href="egg.extension.utility.color.html">color</a></li><li><a href="egg.extension.utility.math.html">math</a></li><li><a href="egg.extension.utility.string.html">string</a></li><li><a href="library.html">library</a></li></ul>
+    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="egg.core.context.html">context</a></li><li><a href="egg.core.data.dictionary.html">dictionary</a></li><li><a href="egg.core.delegate.html">delegate</a></li><li><a href="egg.core.dispatcher.html">dispatcher</a></li><li><a href="egg.core.global.html">global</a></li></ul><h3>Namespaces</h3><ul><li><a href="egg.html">egg</a></li><li><a href="egg.core.html">core</a></li><li><a href="egg.core.data.html">data</a></li><li><a href="egg.core.dom.html">dom</a></li><li><a href="egg.core.module.html">module</a></li><li><a href="egg.core.object.html">object</a></li><li><a href="egg.core.utility.html">utility</a></li><li><a href="egg.core.utility.color.html">color</a></li><li><a href="egg.core.utility.math.html">math</a></li><li><a href="egg.core.utility.string.html">string</a></li><li><a href="library.html">library</a></li></ul>
 </nav>
 
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha5</a> on Tue Oct 27 2015 11:43:50 GMT-0200 (Horário brasileiro de verão)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha5</a> on Fri Mar 03 2017 02:36:57 GMT-0300 (Hora oficial do Brasil)
 </footer>
 
 <script> prettyPrint(); </script>

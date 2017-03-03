@@ -20,9 +20,9 @@
  * our function names conflicting with other functions defined in additional 
  * scripts on the page.
  * 
- * @namespace egg.extension.module
+ * @namespace egg.core.module
  */
-egg.extension.module = (function () {
+egg.core.module = (function () {
 
     'use strict';
 
@@ -93,7 +93,7 @@ egg.extension.module = (function () {
      */
     function createAndBindEventDelegate(delegates, element, handler, name) {
 
-        var delegate = new egg.extension.delegate(element, handler, name);
+        var delegate = new egg.core.delegate(element, handler, name);
         delegates.push(delegate);
 
 //        debugger;
@@ -153,20 +153,18 @@ egg.extension.module = (function () {
 
     Module.prototype = {
         constructor: Module,
-        main: undefined,
         /**
          * Adds a new event handler for a particular type of event.
          * 
-         * @memberOf egg.extension.module
+         * @memberOf egg.core.module
          * 
          * @function add
          * @param {String} event The name of the event to listen for
-         * @param {Boolean} main The function to call when the event occurs
-         * @param {Function} creator The function to call when the event occurs
+         * @param {Function} callback The function to call when the event occurs
          * @returns {egg.module}
          * 
          */
-        add: function (name, main, creator) {
+        add: function (name, callback) {
 
             if (typeof this._registries[name] !== 'undefined') {
                 error(this._library, new Error('Module ' + name + ' has already been added.'));
@@ -174,8 +172,7 @@ egg.extension.module = (function () {
             }
 
             this._registries[name] = {
-                creator: creator,
-                main: main
+                callback: callback,
             };
 
             return this;
@@ -184,7 +181,7 @@ egg.extension.module = (function () {
         /**
          * Adds a new event handler for a particular type of event.
          * 
-         * @memberOf egg.extension.module
+         * @memberOf egg.core.module
          * 
          * @function get
          * @param {String} name The name of the event to listen for
@@ -205,10 +202,16 @@ egg.extension.module = (function () {
             return this._instances[name].instance;
 
         },
+        list: function () {
+            
+            // ver parse correto
+            return this._registries;
+            
+        },
         /**
          * Adds a new event handler for a particular type of event.
          * 
-         * @memberOf egg.extension.module
+         * @memberOf egg.core.module
          * 
          * @function start
          * @param {String} name The name of the event to listen for
@@ -219,12 +222,12 @@ egg.extension.module = (function () {
 
             if ((this._registries[name]) && (!this._instances[name])) {
 
-                var element = egg.extension.dom.query(document.documentElement, '[data-module~=' + name + ']'),
-                    context = new egg.extension.context(this._library, element, name);
+                var element = egg.core.dom.query(document.documentElement, '[data-module~=' + name + ']'),
+                    context = new egg.core.context(this._library, element, name);
 
                 var module = this._registries[name],
                     data = {
-                        instance: module.creator(context),
+                        instance: module.callback(context),
                         element: element,
                         name: name,
                         delegates: []
@@ -240,10 +243,6 @@ egg.extension.module = (function () {
 
                 this._instances[name] = data;
 
-                if (module.main) {
-                    this.main = data.instance;
-                }
-
             }
 
             return this;
@@ -252,7 +251,7 @@ egg.extension.module = (function () {
         /**
          * Adds a new event handler for a particular type of event.
          * 
-         * @memberOf egg.extension.module
+         * @memberOf egg.core.module
          * 
          * @function startAll
          * @returns {egg.module}
@@ -270,7 +269,7 @@ egg.extension.module = (function () {
         /**
          * Adds a new event handler for a particular type of event.
          * 
-         * @memberOf egg.extension.module
+         * @memberOf egg.core.module
          * 
          * @function stop
          * @param {String} name The name of the event to listen for
@@ -286,7 +285,7 @@ egg.extension.module = (function () {
         /**
          * Adds a new event handler for a particular type of event.
          * 
-         * @memberOf egg.extension.module
+         * @memberOf egg.core.module
          * 
          * @function stopAll
          * @returns {egg.module}
@@ -301,12 +300,5 @@ egg.extension.module = (function () {
     }
 
     return Module;
-    
-    
-    return {
-        
-        
-    }
-    
 
 }());

@@ -18,15 +18,15 @@
  * compared to objects in real life. The concept of objects in JavaScript can be 
  * understood with real life, tangible objects.
  * 
- * @namespace egg.extension.object
+ * @namespace egg.core.object
  */
-egg.extension.object = {
+egg.core.object = {
     /**
      * The Object.assign() method is used to copy the values of all enumerable 
      * own properties from one or more source objects to a target object. It 
      * will return the target object.
      * 
-     * @memberOf egg.extension.object
+     * @memberOf egg.core.object
      * 
      * @param {Object} target The object to receive properties
      * @param {Object} source The object whose properties should be copied.

@@ -40,7 +40,7 @@ gulp.task('doc', function () {
 });
 
 gulp.task('concat', function () {
-    return gulp.src(['./src/namespace.js', './src/extension/*.js', './src/library.js'])
+    return gulp.src(['./src/namespace.js', './src/core/*.js', './src/library.js'])
         .pipe(concat(pkg.name + '.js'))
         .pipe(wrapper({
             header: '(function (window) { \n',

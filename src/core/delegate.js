@@ -12,7 +12,7 @@
  * @see {@link https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern|Publish–Subscribe Pattern}
  * 
  */
-egg.extension.delegate = (function () {
+egg.core.delegate = (function () {
  
     'use strict';
 
@@ -91,7 +91,7 @@ egg.extension.delegate = (function () {
     /**
      * An object that manages events within a single DOM element.
      * 
-     * @memberOf egg.extension 
+     * @memberOf egg.core 
      * 
      * @class delegate
      * @param {HTMLElement} element The DOM element to handle events for.
@@ -157,7 +157,7 @@ egg.extension.delegate = (function () {
                         that._handleEvent.apply(that, arguments);
                     }
                     
-                    egg.extension.dom.listen(this.element, eventType, handleEvent);
+                    egg.core.dom.listen(this.element, eventType, handleEvent);
 
                     this._boundHandler[eventType] = handleEvent;
                 }, this, name);

@@ -8,12 +8,12 @@
 
 /**
  * The one global object for Egg structure.
- * @namespace egg.extension.utility
+ * @namespace egg.core.utility
  */
-egg.extension.utility = {
+egg.core.utility = {
     /**
      * Math is a built-in object that has properties and methods for mathematical constants and functions. Not a function object.
-     * @namespace egg.extension.utility.math
+     * @namespace egg.core.utility.math
      * 
      * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math|JavaScript - Math}
      * 
@@ -24,7 +24,7 @@ egg.extension.utility = {
          * in software construction. A UUID is simply a 128-bit value. The 
          * meaning of each bit is defined by any of several variants.
          * 
-         * @memberOf egg.extension.utility.math
+         * @memberOf egg.core.utility.math
          * @function uuid
          * @param {Number} length The name of the event to listen for
          * @param {Number} radix The function to call when the event occurs
@@ -66,7 +66,7 @@ egg.extension.utility = {
         /**
          * Parses a string or number argument and returns a floating point number with number of digits format.
          * 
-         * @memberOf egg.extension.utility.math
+         * @memberOf egg.core.utility.math
          * @function toFloat
          * @param {String|Number} float A string or number that represents the value you want to parse
          * @param {Number} decimal  The number of digits to appear after the decimal point
@@ -94,12 +94,12 @@ egg.extension.utility = {
     },
     /**
      * The one global object for Egg structure.
-     * @namespace egg.extension.utility.string
+     * @namespace egg.core.utility.string
      */
     string: {},
     /**
      * The one global object for Egg structure.
-     * @namespace egg.extension.utility.color
+     * @namespace egg.core.utility.color
      */
     color: {
         random: function () {

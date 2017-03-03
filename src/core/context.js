@@ -9,7 +9,7 @@
  * 
  */
 
-egg.extension.context = (function () {
+egg.core.context = (function () {
 
     'use strict';
 
@@ -17,10 +17,10 @@ egg.extension.context = (function () {
      * The object type that modules use to interact with the environment. Used
      * exclusively within Box.Application, but exposed publicly for easy testing.
      * 
-     * @memberOf egg.extension
+     * @memberOf egg.core
      * 
      * @class context
-     * @mixes egg.extension.observer
+     * @mixes egg.core.observer
      * 
      * @param {HTMLElement} element Module's DOM element
      * @param {String} name Module's DOM element
@@ -34,18 +34,18 @@ egg.extension.context = (function () {
         self._element = element;
         self._name = name;
 
-        egg.extension.object.assign(self, {
+        egg.core.object.assign(self, {
             event: {
                 /**
                  * Adds a new event handler for a particular type of event.
                  * 
-                 * @memberOf egg.extension.context
+                 * @memberOf egg.core.context
                  * @instance
                  * 
                  * @function listen
                  * @param {String} event The name of the event to listen for
                  * @param {Function} handler The function to call when the event occurs
-                 * @returns {egg.extension.context}
+                 * @returns {egg.core.context}
                  * 
                  * @example
                  * context.listen('click', function (event) {;
@@ -74,7 +74,7 @@ egg.extension.context = (function () {
                 /**
                  * Adds a new event handler for a particular type of event.
                  * 
-                 * @memberOf egg.extension.context
+                 * @memberOf egg.core.context
                  * @instance
                  * 
                  * @function module
@@ -101,7 +101,7 @@ egg.extension.context = (function () {
              * Passthrough method that signals that an error has occurred. For 
              * an event is fired.
              * 
-             * @memberOf egg.extension.context
+             * @memberOf egg.core.context
              * @instance
              * 
              * @function error
@@ -133,7 +133,7 @@ egg.extension.context = (function () {
 //        /**
 //         * Adds a new event handler for a particular type of event.
 //         * 
-//         * @memberOf egg.extension.context
+//         * @memberOf egg.core.context
 //         * @instance
 //         * 
 //         * @function module
@@ -151,7 +151,7 @@ egg.extension.context = (function () {
         /**
          * Adds a new event handler for a particular type of event.
          * 
-         * @memberOf egg.extension.context
+         * @memberOf egg.core.context
          * @instance
          * 
          * @property {HTMLElement} element description
@@ -166,7 +166,7 @@ egg.extension.context = (function () {
         /**
          * Adds a new event handler for a particular type of event.
          * 
-         * @memberOf egg.extension.context
+         * @memberOf egg.core.context
          * @instance
          * 
          * @property {Dictionary} element description
@@ -176,67 +176,67 @@ egg.extension.context = (function () {
          * console.log(apiKey); // 1B:2B:2D:37:E1:CE:06:8B:A0:F0:73:05:3C:A3:63:DD
          */
         get global() {
-            return egg.extension.global;
+            return egg.core.global;
         },
         /**
          * Adds a new event handler for a particular type of event.
          * 
-         * @memberOf egg.extension.context
+         * @memberOf egg.core.context
          * @instance
          * 
          * @property {Utility} utility description
          * 
          */
         get utility() {
-            return egg.extension.utility;
+            return egg.core.utility;
         },
         /**
          * Adds a new event handler for a particular type of event.
          * 
-         * @memberOf egg.extension.context
+         * @memberOf egg.core.context
          * @instance
          * 
          * @property {Utility} observer description
          * 
          */
-        get pubsub() {
-            return egg.extension.pubsub;
+        get dispatcher() {
+            return egg.core.dispatcher;
         },
         /**
          * Adds a new event handler for a particular type of event.
          * 
-         * @memberOf egg.extension.context
+         * @memberOf egg.core.context
          * @instance
          * 
          * @property {Utility} data description
          * 
          */
         get data() {
-            return egg.extension.data;
+            return egg.core.data;
         },
         /**
          * Adds a new event handler for a particular type of event.
          * 
-         * @memberOf egg.extension.context
+         * @memberOf egg.core.context
          * @instance
          * 
          * @property {Utility} object description
          * 
          */
         get object() {
-            return egg.extension.object;
+            return egg.core.object;
         },
         /**
          * Adds a new event handler for a particular type of event.
          * 
-         * @memberOf egg.extension.context
+         * @memberOf egg.core.context
          * @instance
          * 
          * @property {Utility} dom description
          * 
          */
         get dom() {
-            return egg.extension.dom;
+            return egg.core.dom;
         },
     };
 

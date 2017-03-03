@@ -12,7 +12,7 @@ egg = (function () {
     // Private
     //--------------------------------------------------------------------------
 
-    var _libraries = new egg.extension.data.dictionary();
+    var _libraries = new egg.core.data.dictionary();
 
 
     return {
@@ -42,7 +42,7 @@ egg = (function () {
              */
             var library = {};
 
-            egg.extension.object.assign(library, {
+            egg.core.object.assign(library, {
                 /**
                  * Adds a new event handler for a particular type of event.
                  * 
@@ -67,30 +67,30 @@ egg = (function () {
                  * @memberOf library
                  * 
                  * @instance
-                 * @property {egg.extension.data.dictionary} name description init
+                 * @property {egg.core.data.dictionary} name description init
                  * 
                  */
-                global: new egg.extension.data.dictionary(),
+                global: new egg.core.data.dictionary(),
                 /**
                  * Adds a new event handler for a particular type of event.
                  * 
                  * @memberOf library
                  * 
                  * @instance
-                 * @property {egg.extension.pubsub} name description init
+                 * @property {egg.core.dispatcher} name description init
                  * 
                  */
-                event: new egg.extension.pubsub(),
+                event: new egg.core.dispatcher(),
                 /**
                  * Adds a new event handler for a particular type of event.
                  * 
                  * @memberOf library
                  * 
                  * @instance
-                 * @property {egg.extension.module} name description init
+                 * @property {egg.core.module} name description init
                  * 
                  */
-                module: new egg.extension.module(library),
+                module: new egg.core.module(library),
                 /**
                  * Stops all modules and clears all saved state
                  * 
@@ -100,7 +100,6 @@ egg = (function () {
                  * @returns {Boolean} The application object.
                  */
                 reset: function () {
-
                     return true;
                 }
             });
@@ -163,7 +162,7 @@ egg = (function () {
 
             return true;
         },
-        extension: egg.extension
+        core: egg.core
     };
 
 })();

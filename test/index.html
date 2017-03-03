@@ -1,147 +1,158 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>egg</title>
-        <style>
-            html,
-            body {
-                height: 100%;
-                width: 100%;
-                margin: 0px;
-                padding: 0px;
-            }
-            main {
-                position: absolute;
-                top: 00px;
-                left: 0px;
-                right: 0px;
-                bottom: 0px;
-                background-color: rgb(255, 255, 255);
-                overflow-x: hidden;
-                overflow-y: hidden;
-            }
-            main:focus{
-                outline: none;
-            }
-        </style>
-        <script src="../dist/egg.js"></script>
-        <script>
-            window.onload = function () {
 
-//                debugger;
+<head>
+    <meta charset="utf-8">
+    <title>egg</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        main {
+            position: absolute;
+            top: 00px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            background-color: rgb(255, 255, 255);
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+        
+        main:focus {
+            outline: none;
+        }
+    </style>
+    <script src="../dist/egg.js"></script>
+    <script>
+        window.onload = function () {
 
-                var plane = egg.create({
-                    name: 'plane'
-                });
+            //                debugger;
 
-                plane.module.add('tool', false, function (context) {
+            var plane = egg.create({
+                name: 'plane'
+            });
 
-                    context.event.listen('click', function (event) {
-                        console.log(event);
-                    })
-                    context.event.listen('keypress', function (event) {
-                        console.log(event);
-                    })
+            plane.module.add('tool', function (context) {
 
-                    return {
-                        init: function (params) {
+                context.event.listen('click', function (event) {
+                    console.log(event);
+                })
+                context.event.listen('keypress', function (event) {
+                    console.log(event);
+                })
 
-                            console.log('tool - init - ' + params);
 
-                            context.element.innerHTML = params;
+                // context.mediator.listen("tool.init", function (params) {
 
-                        },
-                        event: context.pubsub.create()
-                    };
+                // });
 
-                });
 
-                egg.get('plane').module.add('view', false, function (context) {
 
-                    var _zoom = 1;
+                return {
+                    init: function (params) {
 
-                    context.event.listen('keypress', function (event) {
-                        console.log(event);
-                    })
+                        console.log('tool - init - ' + params);
 
-                    console.log(context);
+                        context.element.innerHTML = params;
 
-                    context.error(new EvalError('mostroGard!!! ;-)'))
+                    },
+                    event: context.dispatcher.create()
+                };
 
-                    return {
-                        init: function (params) {
+            });
 
-                        },
-                        update: function () {},
-                        reset: function () {},
-                        get zoom() {
-                            return _zoom;
-                        },
-                        set zoom(value) {
-                            return _zoom = value;
-                        },
-                        destroy: function () {
+            egg.get('plane').module.add('view', function (context) {
 
-                        }
+                var _zoom = 1;
+
+                context.event.listen('keypress', function (event) {
+                    console.log(event);
+                })
+
+                console.log(context);
+
+                // context.error(new EvalError('mostroGard!!! ;-)'))
+
+                return {
+                    init: function (params) {
+
+                    },
+                    update: function () {},
+                    reset: function () {},
+                    get zoom() {
+                        return _zoom;
+                    },
+                    set zoom(value) {
+                        return _zoom = value;
+                    },
+                    destroy: function () {
+
                     }
+                }
 
 
-                });
+            });
 
-                egg.get('plane').module.add('plane', true, function (context) {
+            egg.get('plane').module.add('plane', function (context) {
 
-                    var view = context.module.get('view'),
-                        tool = context.module.get('tool');
+                var view = context.module.get('view'),
+                    tool = context.module.get('tool');
 
-                    var formatedNumber = context.utility.math.toFloat('938.56536157', 3);
-                    console.log(formatedNumber);
+                var formatedNumber = context.utility.math.toFloat('938.56536157', 3);
+                console.log(formatedNumber);
 
-                    return {
-                        init: function (params) {
+                return {
+                    init: function (params) {
 
-                            view.init();
-                            tool.init('mostroGard');
+                        view.init();
+                        tool.init('mostroGard');
 
-                        },
-                        reset: function () {},
-                        view: view,
-                        tool: tool,
-                        point: {},
-                        object: {},
-                        importer: {},
-                        exporter: {},
-                        destroy: function () {
+                    },
+                    reset: function () {},
+                    view: view,
+                    tool: tool,
+                    point: {},
+                    object: {},
+                    importer: {},
+                    exporter: {},
+                    destroy: function () {
 
-                        }
-                    };
+                    }
+                };
 
-                });
+            });
 
-                egg.get('plane').event.listen('error', function (event) {
-                    console.log(event.exception);
-                });
+            egg.get('plane').event.listen('error', function (event) {
+                console.log(event.exception);
+            });
 
-                egg.get('plane').init();
+            egg.get('plane').init();
 
-                console.log(egg);
-                console.log(egg.get('plane'));
-                console.log(egg.get('plane').module.main);
+            console.log(egg);
+            console.log(egg.get('plane'));
+            console.log(egg.get('plane').module);
+            console.log(egg.get('plane').module.list());
 
-                var plane = egg.get('plane').module.main;
+            var plane = egg.get('plane').module.get("plane");
 
-                plane.init();
+            plane.init();
 
-            };
-        </script>
-    </head>
+        };
+    </script>
+</head>
 
-    <body>
+<body>
 
-        <main data-module="tool view" tabindex="0">
+    <main data-module="tool view" tabindex="0">
 
-        </main>
+    </main>
 
-    </body>
+</body>
 
 </html>

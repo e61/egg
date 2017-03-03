@@ -16,9 +16,9 @@
  * use B-tree indexes for small percentages of data retrieval and compilers and 
  * databases use dynamic hash tables as look up tables.
  * 
- * @namespace egg.extension.data
+ * @namespace egg.core.data
  */
-egg.extension.data = {
+egg.core.data = {
     dictionary: (function () {
 
         "use strict";
@@ -28,7 +28,7 @@ egg.extension.data = {
          * is an abstract data type composed of a collection of (key, value) pairs, 
          * such that each possible key appears just once in the collection.
          * 
-         * @memberOf egg.extension.data
+         * @memberOf egg.core.data
          * 
          * @class dictionary
          * 
@@ -44,7 +44,7 @@ egg.extension.data = {
             /**
              * Adds a new event handler for a particular type of event.
              * 
-             * @memberOf egg.extension.data.dictionary
+             * @memberOf egg.core.data.dictionary
              * 
              * @function add
              * @instance
@@ -90,16 +90,16 @@ egg.extension.data = {
 
         /**
          * Adds a new event handler for a particular type of event.
-         * @memberOf egg.extension.data.dictionary
+         * @memberOf egg.core.data.dictionary
          * 
          * @function create
          * @returns {void}
          * 
-         * @see egg.extension.context
+         * @see egg.core.context
          * 
          * @example
          * var event = context.observer.create();
-         * console.log(event); // PubSub{}
+         * console.log(event); // Dispatcher{}
          */
         Dictionary.create = function () {
             return new Dictionary();

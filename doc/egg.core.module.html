@@ -27,7 +27,7 @@
 
 <header>
     <h2>
-        <span class="ancestors"><a href="egg.html">egg</a><a href="egg.extension.html">.extension</a>.</span>
+        <span class="ancestors"><a href="egg.html">egg</a><a href="egg.core.html">.core</a>.</span>
     
     module
     </h2>
@@ -40,15 +40,7 @@
 
     
         
-            <div class="description">The Module pattern was originally defined as a way to provide both private 
-and public encapsulation for classes in conventional software engineering.
-<br><br>
-In JavaScript, the Module pattern is used to further emulate the concept of 
-classes in such a way that we're able to include both public/private methods 
-and variables inside a single object, thus shielding particular parts from 
-the global scope. What this results in is a reduction in the likelihood of 
-our function names conflicting with other functions defined in additional 
-scripts on the page.</div>
+            <div class="description">The Module pattern was originally defined as a way to provide both private and public encapsulation for classes in conventional software engineering.<br><br>In JavaScript, the Module pattern is used to further emulate the concept of classes in such a way that we're able to include both public/private methods and variables inside a single object, thus shielding particular parts from the global scope. What this results in is a reduction in the likelihood of our function names conflicting with other functions defined in additional scripts on the page.</div>
         
 
         
@@ -74,7 +66,7 @@ scripts on the page.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="module.js.html">extension/module.js</a>, <a href="module.js.html#line12">line 12</a>
+        <a href="module.js.html">core/module.js</a>, <a href="module.js.html#line12">line 12</a>
     </li></ul></dd>
     
 
@@ -108,7 +100,7 @@ scripts on the page.</div>
         <dl>
             
 <dt>
-    <h4 class="name" id="add"><span class="type-signature">&lt;static> </span>add<span class="signature">(event, main, creator)</span><span class="type-signature"> &rarr; {egg.module}</span></h4>
+    <h4 class="name" id="add"><span class="type-signature">&lt;static> </span>add<span class="signature">(event, callback)</span><span class="type-signature"> &rarr; {egg.module}</span></h4>
 
     
 </dt>
@@ -173,30 +165,7 @@ scripts on the page.</div>
 
         <tr>
             
-                <td class="name"><code>main</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Boolean</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The function to call when the event occurs</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>creator</code></td>
+                <td class="name"><code>callback</code></td>
             
 
             <td class="type">
@@ -243,7 +212,7 @@ scripts on the page.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="module.js.html">extension/module.js</a>, <a href="module.js.html#line157">line 157</a>
+        <a href="module.js.html">core/module.js</a>, <a href="module.js.html#line156">line 156</a>
     </li></ul></dd>
     
 
@@ -380,7 +349,7 @@ scripts on the page.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="module.js.html">extension/module.js</a>, <a href="module.js.html#line184">line 184</a>
+        <a href="module.js.html">core/module.js</a>, <a href="module.js.html#line181">line 181</a>
     </li></ul></dd>
     
 
@@ -517,7 +486,7 @@ scripts on the page.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="module.js.html">extension/module.js</a>, <a href="module.js.html#line208">line 208</a>
+        <a href="module.js.html">core/module.js</a>, <a href="module.js.html#line211">line 211</a>
     </li></ul></dd>
     
 
@@ -606,7 +575,7 @@ scripts on the page.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="module.js.html">extension/module.js</a>, <a href="module.js.html#line252">line 252</a>
+        <a href="module.js.html">core/module.js</a>, <a href="module.js.html#line251">line 251</a>
     </li></ul></dd>
     
 
@@ -743,7 +712,7 @@ scripts on the page.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="module.js.html">extension/module.js</a>, <a href="module.js.html#line270">line 270</a>
+        <a href="module.js.html">core/module.js</a>, <a href="module.js.html#line269">line 269</a>
     </li></ul></dd>
     
 
@@ -832,7 +801,7 @@ scripts on the page.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="module.js.html">extension/module.js</a>, <a href="module.js.html#line286">line 286</a>
+        <a href="module.js.html">core/module.js</a>, <a href="module.js.html#line285">line 285</a>
     </li></ul></dd>
     
 
@@ -893,13 +862,13 @@ scripts on the page.</div>
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="egg.extension.context.html">context</a></li><li><a href="egg.extension.data.dictionary.html">dictionary</a></li><li><a href="egg.extension.delegate.html">delegate</a></li><li><a href="egg.extension.global.html">global</a></li><li><a href="egg.extension.pubsub.html">pubsub</a></li></ul><h3>Namespaces</h3><ul><li><a href="egg.html">egg</a></li><li><a href="egg.extension.html">extension</a></li><li><a href="egg.extension.data.html">data</a></li><li><a href="egg.extension.dom.html">dom</a></li><li><a href="egg.extension.module.html">module</a></li><li><a href="egg.extension.object.html">object</a></li><li><a href="egg.extension.utility.html">utility</a></li><li><a href="egg.extension.utility.color.html">color</a></li><li><a href="egg.extension.utility.math.html">math</a></li><li><a href="egg.extension.utility.string.html">string</a></li><li><a href="library.html">library</a></li></ul>
+    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="egg.core.context.html">context</a></li><li><a href="egg.core.data.dictionary.html">dictionary</a></li><li><a href="egg.core.delegate.html">delegate</a></li><li><a href="egg.core.dispatcher.html">dispatcher</a></li><li><a href="egg.core.global.html">global</a></li></ul><h3>Namespaces</h3><ul><li><a href="egg.html">egg</a></li><li><a href="egg.core.html">core</a></li><li><a href="egg.core.data.html">data</a></li><li><a href="egg.core.dom.html">dom</a></li><li><a href="egg.core.module.html">module</a></li><li><a href="egg.core.object.html">object</a></li><li><a href="egg.core.utility.html">utility</a></li><li><a href="egg.core.utility.color.html">color</a></li><li><a href="egg.core.utility.math.html">math</a></li><li><a href="egg.core.utility.string.html">string</a></li><li><a href="library.html">library</a></li></ul>
 </nav>
 
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha5</a> on Tue Oct 27 2015 11:43:50 GMT-0200 (Horário brasileiro de verão)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha5</a> on Fri Mar 03 2017 02:36:58 GMT-0300 (Hora oficial do Brasil)
 </footer>
 
 <script> prettyPrint(); </script>

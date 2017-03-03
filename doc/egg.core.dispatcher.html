@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: pubsub</title>
+    <title>JSDoc: Class: dispatcher</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: pubsub</h1>
+    <h1 class="page-title">Class: dispatcher</h1>
 
     
 
@@ -27,9 +27,9 @@
 
 <header>
     <h2>
-        <span class="ancestors"><a href="egg.html">egg</a><a href="egg.extension.html">.extension</a>.</span>
+        <span class="ancestors"><a href="egg.html">egg</a><a href="egg.core.html">.core</a>.</span>
     
-    pubsub
+    dispatcher
     </h2>
     
 </header>
@@ -41,7 +41,7 @@
     
         
 <dt>
-    <h4 class="name" id="pubsub"><span class="type-signature"></span>new pubsub<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="dispatcher"><span class="type-signature"></span>new dispatcher<span class="signature">()</span><span class="type-signature"></span></h4>
 
     
 </dt>
@@ -49,12 +49,7 @@
 
     
     <div class="description">
-        Publish–Subscribe are sent to notify code of interesting things that have 
-taken place. Each notification is represented by an data which is based 
-on yours definition, and have custom fields and/or functions used to 
-get additional information about what happened. Nnotifications can represent 
-everything from basic user interactions to automated notifications of 
-things happening in the rendering model
+        Publish–Subscribe are sent to notify code of interesting things that have taken place. Each notification is represented by an data which is based on yours definition, and have custom fields and/or functions used to get additional information about what happened. Nnotifications can represent everything from basic user interactions to automated notifications of things happening in the rendering model
     </div>
     
 
@@ -87,7 +82,7 @@ things happening in the rendering model
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="pubsub.js.html">extension/pubsub.js</a>, <a href="pubsub.js.html#line18">line 18</a>
+        <a href="dispatcher.js.html">core/dispatcher.js</a>, <a href="dispatcher.js.html#line18">line 18</a>
     </li></ul></dd>
     
 
@@ -176,7 +171,7 @@ things happening in the rendering model
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="pubsub.js.html">extension/pubsub.js</a>, <a href="pubsub.js.html#line88">line 88</a>
+        <a href="dispatcher.js.html">core/dispatcher.js</a>, <a href="dispatcher.js.html#line88">line 88</a>
     </li></ul></dd>
     
 
@@ -186,7 +181,7 @@ things happening in the rendering model
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="egg.extension.context.html">egg.extension.context</a></li>
+            <li><a href="egg.core.context.html">egg.core.context</a></li>
         </ul>
     </dd>
     
@@ -228,8 +223,7 @@ things happening in the rendering model
     
         <h5>Example</h5>
         
-    <pre class="prettyprint"><code>var event = context.observer.create();
-console.log(event); // PubSub{}</code></pre>
+    <pre class="prettyprint"><code>var event = context.observer.create();console.log(event); // Dispatcher{}</code></pre>
 
     
 </dd>
@@ -349,7 +343,7 @@ console.log(event); // PubSub{}</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="pubsub.js.html">extension/pubsub.js</a>, <a href="pubsub.js.html#line36">line 36</a>
+        <a href="dispatcher.js.html">core/dispatcher.js</a>, <a href="dispatcher.js.html#line36">line 36</a>
     </li></ul></dd>
     
 
@@ -359,7 +353,7 @@ console.log(event); // PubSub{}</code></pre>
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="egg.extension.context.html#listen">egg.extension.context.listen</a></li>
+            <li><a href="egg.core.context.html#listen">egg.core.context.listen</a></li>
         </ul>
     </dd>
     
@@ -516,7 +510,7 @@ console.log(event); // PubSub{}</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="pubsub.js.html">extension/pubsub.js</a>, <a href="pubsub.js.html#line53">line 53</a>
+        <a href="dispatcher.js.html">core/dispatcher.js</a>, <a href="dispatcher.js.html#line53">line 53</a>
     </li></ul></dd>
     
 
@@ -676,7 +670,7 @@ console.log(event); // PubSub{}</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="pubsub.js.html">extension/pubsub.js</a>, <a href="pubsub.js.html#line69">line 69</a>
+        <a href="dispatcher.js.html">core/dispatcher.js</a>, <a href="dispatcher.js.html#line69">line 69</a>
     </li></ul></dd>
     
 
@@ -737,13 +731,13 @@ console.log(event); // PubSub{}</code></pre>
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="egg.extension.context.html">context</a></li><li><a href="egg.extension.data.dictionary.html">dictionary</a></li><li><a href="egg.extension.delegate.html">delegate</a></li><li><a href="egg.extension.global.html">global</a></li><li><a href="egg.extension.pubsub.html">pubsub</a></li></ul><h3>Namespaces</h3><ul><li><a href="egg.html">egg</a></li><li><a href="egg.extension.html">extension</a></li><li><a href="egg.extension.data.html">data</a></li><li><a href="egg.extension.dom.html">dom</a></li><li><a href="egg.extension.module.html">module</a></li><li><a href="egg.extension.object.html">object</a></li><li><a href="egg.extension.utility.html">utility</a></li><li><a href="egg.extension.utility.color.html">color</a></li><li><a href="egg.extension.utility.math.html">math</a></li><li><a href="egg.extension.utility.string.html">string</a></li><li><a href="library.html">library</a></li></ul>
+    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="egg.core.context.html">context</a></li><li><a href="egg.core.data.dictionary.html">dictionary</a></li><li><a href="egg.core.delegate.html">delegate</a></li><li><a href="egg.core.dispatcher.html">dispatcher</a></li><li><a href="egg.core.global.html">global</a></li></ul><h3>Namespaces</h3><ul><li><a href="egg.html">egg</a></li><li><a href="egg.core.html">core</a></li><li><a href="egg.core.data.html">data</a></li><li><a href="egg.core.dom.html">dom</a></li><li><a href="egg.core.module.html">module</a></li><li><a href="egg.core.object.html">object</a></li><li><a href="egg.core.utility.html">utility</a></li><li><a href="egg.core.utility.color.html">color</a></li><li><a href="egg.core.utility.math.html">math</a></li><li><a href="egg.core.utility.string.html">string</a></li><li><a href="library.html">library</a></li></ul>
 </nav>
 
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha5</a> on Tue Oct 27 2015 11:43:50 GMT-0200 (Horário brasileiro de verão)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha5</a> on Fri Mar 03 2017 02:36:58 GMT-0300 (Hora oficial do Brasil)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -27,7 +27,7 @@
 
 <header>
     <h2>
-        <span class="ancestors"><a href="egg.html">egg</a><a href="egg.extension.html">.extension</a>.</span>
+        <span class="ancestors"><a href="egg.html">egg</a><a href="egg.core.html">.core</a>.</span>
     
     dom
     </h2>
@@ -40,10 +40,7 @@
 
     
         
-            <div class="description">A Web page is a document. This document can be either displayed in the browser 
-window, or as the HTML source. But it is the same document in both cases. The 
-Document Object Model (DOM) provides another way to represent, store and 
-manipulate that same document.</div>
+            <div class="description">A Web page is a document. This document can be either displayed in the browser window, or as the HTML source. But it is the same document in both cases. The Document Object Model (DOM) provides another way to represent, store and manipulate that same document.</div>
         
 
         
@@ -69,7 +66,7 @@ manipulate that same document.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dom.js.html">extension/dom.js</a>, <a href="dom.js.html#line13">line 13</a>
+        <a href="dom.js.html">core/dom.js</a>, <a href="dom.js.html#line13">line 13</a>
     </li></ul></dd>
     
 
@@ -111,9 +108,7 @@ manipulate that same document.</div>
 
     
     <div class="description">
-        Method registers the specified listener on the EventTarget it's 
-called on. The event target may be an Element in a document, the 
-Document itself, a Window, or any other object that supports events.
+        Method registers the specified listener on the EventTarget it's called on. The event target may be an Element in a document, the Document itself, a Window, or any other object that supports events.
     </div>
     
 
@@ -209,9 +204,7 @@ Document itself, a Window, or any other object that supports events.
 
             
 
-            <td class="description last">The object that receives a notification 
-when an event of the specified type occurs. This must be an object 
-implementing the EventListener interface, or simply a JavaScript function</td>
+            <td class="description last">The object that receives a notification when an event of the specified type occurs. This must be an object implementing the EventListener interface, or simply a JavaScript function</td>
         </tr>
 
     
@@ -242,7 +235,7 @@ implementing the EventListener interface, or simply a JavaScript function</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dom.js.html">extension/dom.js</a>, <a href="dom.js.html#line87">line 87</a>
+        <a href="dom.js.html">core/dom.js</a>, <a href="dom.js.html#line87">line 87</a>
     </li></ul></dd>
     
 
@@ -305,8 +298,7 @@ implementing the EventListener interface, or simply a JavaScript function</td>
 
     
     <div class="description">
-        Returns the first element that is a descendant of the element
-on which it is invoked that matches the specified group of selectors.
+        Returns the first element that is a descendant of the elementon which it is invoked that matches the specified group of selectors.
     </div>
     
 
@@ -410,7 +402,7 @@ on which it is invoked that matches the specified group of selectors.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dom.js.html">extension/dom.js</a>, <a href="dom.js.html#line41">line 41</a>
+        <a href="dom.js.html">core/dom.js</a>, <a href="dom.js.html#line41">line 41</a>
     </li></ul></dd>
     
 
@@ -481,9 +473,7 @@ on which it is invoked that matches the specified group of selectors.
 
     
     <div class="description">
-        Returns a list of the elements within the document (using depth-first 
-pre-order traversal of the document's nodes) that match the specified 
-group of selectors. The object returned is a NodeList.
+        Returns a list of the elements within the document (using depth-first pre-order traversal of the document's nodes) that match the specified group of selectors. The object returned is a NodeList.
     </div>
     
 
@@ -587,7 +577,7 @@ group of selectors. The object returned is a NodeList.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dom.js.html">extension/dom.js</a>, <a href="dom.js.html#line66">line 66</a>
+        <a href="dom.js.html">core/dom.js</a>, <a href="dom.js.html#line66">line 66</a>
     </li></ul></dd>
     
 
@@ -629,10 +619,7 @@ group of selectors. The object returned is a NodeList.
     
             
 <div class="param-desc">
-    The returned NodeList will contain all the elements 
-in the document that are matched by any of the specified selectors. 
-If the selectors string contains a CSS pseudo-element, the returned 
-elementList will be empty
+    The returned NodeList will contain all the elements in the document that are matched by any of the specified selectors. If the selectors string contains a CSS pseudo-element, the returned elementList will be empty
 </div>
 
 
@@ -665,7 +652,7 @@ elementList will be empty
 
     
     <div class="description">
-        Removes the event listener previously registered with <a href="egg.extension.dom.html#listen">egg.extension.dom.listen</a>.
+        Removes the event listener previously registered with <a href="egg.core.dom.html#listen">egg.core.dom.listen</a>.
     </div>
     
 
@@ -761,8 +748,7 @@ elementList will be empty
 
             
 
-            <td class="description last">The EventListener function to remove from 
-the event target</td>
+            <td class="description last">The EventListener function to remove from the event target</td>
         </tr>
 
     
@@ -793,7 +779,7 @@ the event target</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="dom.js.html">extension/dom.js</a>, <a href="dom.js.html#line105">line 105</a>
+        <a href="dom.js.html">core/dom.js</a>, <a href="dom.js.html#line105">line 105</a>
     </li></ul></dd>
     
 
@@ -861,13 +847,13 @@ the event target</td>
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="egg.extension.context.html">context</a></li><li><a href="egg.extension.data.dictionary.html">dictionary</a></li><li><a href="egg.extension.delegate.html">delegate</a></li><li><a href="egg.extension.global.html">global</a></li><li><a href="egg.extension.pubsub.html">pubsub</a></li></ul><h3>Namespaces</h3><ul><li><a href="egg.html">egg</a></li><li><a href="egg.extension.html">extension</a></li><li><a href="egg.extension.data.html">data</a></li><li><a href="egg.extension.dom.html">dom</a></li><li><a href="egg.extension.module.html">module</a></li><li><a href="egg.extension.object.html">object</a></li><li><a href="egg.extension.utility.html">utility</a></li><li><a href="egg.extension.utility.color.html">color</a></li><li><a href="egg.extension.utility.math.html">math</a></li><li><a href="egg.extension.utility.string.html">string</a></li><li><a href="library.html">library</a></li></ul>
+    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="egg.core.context.html">context</a></li><li><a href="egg.core.data.dictionary.html">dictionary</a></li><li><a href="egg.core.delegate.html">delegate</a></li><li><a href="egg.core.dispatcher.html">dispatcher</a></li><li><a href="egg.core.global.html">global</a></li></ul><h3>Namespaces</h3><ul><li><a href="egg.html">egg</a></li><li><a href="egg.core.html">core</a></li><li><a href="egg.core.data.html">data</a></li><li><a href="egg.core.dom.html">dom</a></li><li><a href="egg.core.module.html">module</a></li><li><a href="egg.core.object.html">object</a></li><li><a href="egg.core.utility.html">utility</a></li><li><a href="egg.core.utility.color.html">color</a></li><li><a href="egg.core.utility.math.html">math</a></li><li><a href="egg.core.utility.string.html">string</a></li><li><a href="library.html">library</a></li></ul>
 </nav>
 
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha5</a> on Tue Oct 27 2015 11:43:50 GMT-0200 (Horário brasileiro de verão)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha5</a> on Fri Mar 03 2017 02:36:58 GMT-0300 (Hora oficial do Brasil)
 </footer>
 
 <script> prettyPrint(); </script>

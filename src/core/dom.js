@@ -16,9 +16,9 @@
  * Document Object Model (DOM) provides another way to represent, store and 
  * manipulate that same document.
  * 
- * @namespace egg.extension.dom
+ * @namespace egg.core.dom
  */
-egg.extension.dom = (function () {
+egg.core.dom = (function () {
     'use strict';
 
     return {
@@ -26,7 +26,7 @@ egg.extension.dom = (function () {
          * Returns the first element that is a descendant of the element
          * on which it is invoked that matches the specified group of selectors.
          * 
-         * @memberOf egg.extension.dom
+         * @memberOf egg.core.dom
          * 
          * @param {HTMLElement} root parent element to query
          * @param {String} selectors is a string containing one or more CSS selectors separated by commas
@@ -46,7 +46,7 @@ egg.extension.dom = (function () {
          * pre-order traversal of the document's nodes) that match the specified 
          * group of selectors. The object returned is a NodeList.
          * 
-         * @memberOf egg.extension.dom
+         * @memberOf egg.core.dom
          * 
          * @param {HTMLElement} root parent element to query
          * @param {string} selectors is a string containing one or more CSS selectors separated by commas.
@@ -71,7 +71,7 @@ egg.extension.dom = (function () {
          * called on. The event target may be an Element in a document, the 
          * Document itself, a Window, or any other object that supports events.
          * 
-         * @memberOf egg.extension.dom
+         * @memberOf egg.core.dom
          * 
          * @param {HTMLElement} element Target to attach listener to
          * @param {string} type representing the event type to listen or
@@ -88,9 +88,9 @@ egg.extension.dom = (function () {
             element.addEventListener(type, listener, false);
         },
         /**
-         * Removes the event listener previously registered with {@link egg.extension.dom.listen}.
+         * Removes the event listener previously registered with {@link egg.core.dom.listen}.
          * 
-         * @memberOf egg.extension.dom
+         * @memberOf egg.core.dom
          * 
          * @param {HTMLElement} element Target to remove listener from
          * @param {String} type representing the event type to remove
